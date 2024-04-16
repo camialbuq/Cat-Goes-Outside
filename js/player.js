@@ -69,11 +69,14 @@ class Player {
       this.isJumping = true;
       let initialTop = this.top;
       let jumpMotion = setInterval(() => {
+        //execute a function repeatedly every 17 miliseconds
         if (this.top - initialTop <= -this.jumpHeight) {
-          clearInterval(jumpMotion);
+          //checks if difference between current top and initial top
+          //are less than or equal (being below) the jump height
+          clearInterval(jumpMotion); //once reaching jump height then we start fall motion
           this.fall(initialTop);
         } else {
-          this.top -= this.jumpSpeed;
+          this.top -= this.jumpSpeed; //while still not on top we jump up
           this.updatePosition();
         }
       }, 17);
@@ -88,12 +91,12 @@ class Player {
   fall(initialTop) {
     let fallMotion = setInterval(() => {
       if (this.top >= initialTop) {
-        clearInterval(fallMotion);
+        clearInterval(fallMotion); //this condition if player is in the air
         this.top = initialTop;
         this.updatePosition();
         this.isJumping = false; // Reset jump state
       } else {
-        this.top += 6; // Adjust the fall speed as needed
+        this.top += 6; // Adjust the fall speed as needed to go down
         this.updatePosition();
       }
     }, 17);

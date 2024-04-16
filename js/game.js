@@ -52,7 +52,7 @@ class Game {
     // Runs the gameLoop on a fequency of 60 times per second. Also stores the ID of the interval.
     this.gameIntervalId = setInterval(() => {
       this.gameLoop();
-    }, this.gameLoopFrequency);
+    }, this.gameLoopFrequency); //60fps
     document.getElementById("food-collected").innerHTML = `${this.score}`;
   }
 
@@ -60,7 +60,7 @@ class Game {
     // If "gameIsOver" is set to "true" clear the interval to stop the loop
     this.update();
     if (this.gameIsOver) {
-      clearInterval(this.gameIntervalId);
+      clearInterval(this.gameIntervalId); //clear the current game ID
     }
   }
 
@@ -85,7 +85,7 @@ class Game {
 
       obstacle.move();
 
-      // If the player's car collides with an obstacle
+      // If the player collides with an obstacle
       if (this.player.didCollide(obstacle)) {
         // Remove the obstacle element from the DOM
         obstacle.element.remove();
@@ -102,13 +102,17 @@ class Game {
     // Create a new obstacle based on a random probability
     // when there is no other obstacles on the screen
     if (Math.random() > 0.98 && this.obstacles.length < 100) {
-      const currentTime = Date.now();
+      //this is a high likelihood condition
+      const currentTime = Date.now(); //current time in miliseconds
       const creationDelay = Math.floor(
         Math.random() * (2500 - 1200 + 1) + 1200
       ); //(numbers are max time you wait in between generation - minimum time ) + minimum time
+      //generates a random delay between 1200ms and 2500ms for the creation of the next obstacle.
 
       if (currentTime - this.lastObstacleCreationTime > creationDelay) {
+        //checks if enough time has passed since the last obstacle creation
         this.obstacles.push(new Obstacle(this.gameScreen));
+        //if enough time has passed then a new obstacle added
         this.lastObstacleCreationTime = currentTime; // Update the last creation time
         // console.log("obstacle created");
       }
@@ -130,6 +134,10 @@ class Game {
         // Update the counter variable to account for the removed obstacle
         i--;
         document.getElementById("food-collected").innerHTML = `${this.score}`;
+
+        // //ECEM AUDIO
+        // const soundCatch = new Audio ('audiofile.mp3');
+        // soundCatch.play();
       }
     }
 
@@ -158,7 +166,7 @@ class Game {
       this.gameScreen.style.backgroundImage =
         "url('./images/gamebackground02.png')";
     }
-    if (this.score === 16) {
+    if (this.score === 14) {
       this.gameScreen.style.backgroundImage =
         "url('./images/gamebackground03.png')";
     }

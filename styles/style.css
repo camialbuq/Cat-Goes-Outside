@@ -70,13 +70,13 @@ body {
   background-color: antiquewhite;
   box-sizing: border-box;
   width: 25%;
-  height: 35%;
+  height: 20%;
   text-align: left;
   font-size: 8%;
   padding: 2% 2%;
   opacity: 60%;
   position: absolute;
-  margin-top: 30%;
+  margin-top: 32%;
   margin-left: -70%;
 }
 
