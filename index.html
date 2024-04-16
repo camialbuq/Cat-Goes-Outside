@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Cat goes Outside</title>
+  </head>
+  <body>
+    <main>
+      <audio
+          class="hide"
+          id="bgMusic"
+          src="./music/michael-bublé-feeling-good-(karaoke-version)-made-with-Voicemod.mp3"
+          autoplay
+          loop
+          controls
+        ></audio>
+      
+      <!-- #game-intro is initially shown on the game start screen -->
+      <div id="game-intro">
+        <img id="start-image" src="./images/introscreen.png" alt=""/
+        class=""">
+        <br />
+        <button id="start-button">Start Game</button>
+        <!-- <button id="difficulty-button" class="button">
+          Difficulty : <span id="difficulty-status">Medium</span>
+        </button> -->
+        <button id="sound-button" class="button">
+          Sound : <span id="sound-status">On</span>
+        </button>
+        <div class="intro-p-text">
+          <p>
+            - Help this dreamy cat collecting enough food and have energy to
+            leave the apartment, go outside and explore a better life! <br />
+            <br>
+            - Use the arrow keys to move. <br />
+            <br>
+            - Your goal is to collect 20 food packages and not waste your 7 lives.
+          </p>
+        </div>
+      </div>
+
+      <div id="game-container" class="">
+        <div id="player-score" class="hide">
+          <p id="stats-in-game">
+            <!-- Difficulty: <span id="difficulty-in-game">Medium</span><br /> -->
+            Lives: <span id="lives">7</span><br />
+            Food collected: <span id="food-collected">0</span> / 20<br />
+          </p>
+        </div>
+        <!-- #game-screen is initially hidden using CSS style display: none -->
+        <div id="game-screen"></div>
+      </div>
+
+      <!-- #game-end screens are initially hidden using CSS style class "hide" -->
+      <div id="game-end-lose" class="hide">
+        <img id="lost-image" src="./images/lostscreen.png" alt="" />
+        <h1>
+          You just lost your 7 lives.</br>You may be a lazy cat and nap now, but
+          don't forget to try again and go outside soon!
+        </h1>
+        <button id="restart-button">Restart</button>
+      </div>
+
+      <div id="game-end-win" class="hide">
+        <img id="won-image" src="./images/wonscreen.png" alt="" />
+        <h1>
+          You just finally went through the backyard, the gardens and even reach the open fields, who knows?!</br>Enjoy the walk outside, play with a friend</br>and remember to get home safe to take a nap and start again tomorrow.
+        </h1>
+        <button id="restart-button-won">Restart</button>
+      </div>
+
+    </main>
+
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/player.js"></script>
+    <script type="text/javascript" src="js/obstacle.js"></script>
+    <script type="text/javascript" src="js/food.js"></script>
+  </body>
+</html>
