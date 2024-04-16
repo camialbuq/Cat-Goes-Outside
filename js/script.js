@@ -23,6 +23,7 @@ window.onload = function () {
     startGame();
     bgMusic.src =
       "./music/michael-bublé-feeling-good-(karaoke-version)-made-with-Voicemod.mp3";
+    bgMusic.play();
   });
 
   //starting game

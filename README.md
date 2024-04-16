@@ -1,10 +1,10 @@
 # Camila Albuquerque
+
 # Ironhack Bootcamp - April 2024 - Project 01
 
-CAT GOES OUTSIDE 
+CAT GOES OUTSIDE
 
-![Cat goes outside](imaages/logo.png)
-
+![Cat goes outside](images/logo.png)
 
 - 2d game using HTML, CSS, JavaScript, and DOM.
 - Implement game logic and UI, including start screen, game screen, and end-game screen.
